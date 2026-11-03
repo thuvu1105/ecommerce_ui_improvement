@@ -16,6 +16,11 @@ body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .announcement {
   min-height: 31px; display: flex; align-items: center; justify-content: center; gap: 11px;
   padding: 7px 14px; background: var(--cyan); color: #050505; text-align: center;
@@ -71,10 +76,12 @@ button { font: inherit; cursor: pointer; }
 .product-card { min-width: 0; }
 .product-image { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background-color: #dedbd2; background-size: cover; background-position: center; transition: background-size .25s; }
 .product-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.13), transparent 25%, transparent 70%, rgba(0,0,0,.08)); pointer-events: none; }
-.image-one { background-image: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85'); }
-.image-two { background-image: url('https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=800&q=85'); }
-.image-three { background-image: url('https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=85'); }
-.image-four { background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85'); }
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 .sale-badge { position: absolute; z-index: 1; top: 12px; left: 12px; padding: 7px 9px; background: var(--cyan); color: #111; font-size: 10px; font-weight: 800; }
 .product-code { position: absolute; z-index: 1; top: 15px; right: 12px; color: white; font-size: 8px; font-weight: 700; letter-spacing: .1em; }
 .quick-add { position: absolute; z-index: 2; right: 12px; bottom: 12px; display: grid; place-items: center; width: 38px; height: 38px; border: 0; border-radius: 50%; background: white; color: var(--ink); font-size: 24px; transition: background .2s, transform .2s; }
