@@ -18,3 +18,17 @@ countries.push(new Country("Spain", "ES", "Madrid", 46505963));
 countries.push(new Country("United Kingdom", "GB", "London", 62348447));
 
 /* your code goes here */
+
+document.write("<h2>Countries</h2>");
+
+for (var i = 0; i < countries.length; i++) {
+    document.write("<h3>" + countries[i].name + "</h3>");
+
+    for (var property in countries[i]) {
+        document.write(
+            property + ": " + countries[i][property] + "<br>"
+        );
+    }
+
+    document.write("<hr>");
+}
